@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PisahUang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>PisahUang</h1>
+    <p>Catat uang pribadi dan uang usaha secara terpisah.</p>
+
+    <section>
+      <h2>Tambah transaksi</h2>
+      <form id="form-transaksi">
+        <label>Tanggal
+          <input type="date" name="tanggal">
+        </label>
+
+        <label>Jenis
+          <select name="jenis">
+            <option value="pemasukan">Pemasukan</option>
+            <option value="pengeluaran">Pengeluaran</option>
+          </select>
+        </label>
+
+        <label>Dompet
+          <select name="dompet">
+            <option value="Pribadi">Pribadi</option>
+            <option value="Usaha">Usaha</option>
+          </select>
+        </label>
+
+        <label>Kategori
+          <select name="kategori">
+            <option value="Penjualan">Penjualan</option>
+            <option value="Belanja Stok">Belanja Stok</option>
+            <option value="Makan">Makan</option>
+            <option value="Transport">Transport</option>
+            <option value="Tagihan">Tagihan</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </label>
+
+        <label>Nominal (Rp)
+          <input type="number" name="nominal" placeholder="Contoh: 15000">
+        </label>
+
+        <label>Catatan (opsional)
+          <input type="text" name="catatan" placeholder="Contoh: Beras">
+        </label>
+
+        <p id="pesan" class="error"></p>
+        <button type="submit">Simpan</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Riwayat</h2>
+      <ul id="daftar"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
