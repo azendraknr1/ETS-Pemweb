@@ -11,9 +11,32 @@
     <h1>PisahUang</h1>
     <p>Catat uang pribadi dan uang usaha secara terpisah.</p>
 
+    <section class="ringkasan">
+      <div class="kartu">
+        <span>Total saldo</span>
+        <strong id="saldo">Rp 0</strong>
+      </div>
+      <div class="kartu">
+        <span>Pemasukan</span>
+        <strong id="total-masuk" class="pemasukan">Rp 0</strong>
+      </div>
+      <div class="kartu">
+        <span>Pengeluaran</span>
+        <strong id="total-keluar" class="pengeluaran">Rp 0</strong>
+      </div>
+      <div class="kartu">
+        <span>Dompet Pribadi</span>
+        <strong id="saldo-pribadi">Rp 0</strong>
+      </div>
+      <div class="kartu">
+        <span>Dompet Usaha</span>
+        <strong id="saldo-usaha">Rp 0</strong>
+      </div>
+    </section>
+
     <section>
       <h2>Tambah transaksi</h2>
-      <form id="form-transaksi">
+      <form id="form-transaksi" novalidate>
         <label>Tanggal
           <input type="date" name="tanggal">
         </label>
@@ -53,6 +76,40 @@
 
         <p id="pesan" class="error"></p>
         <button type="submit">Simpan</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Pindah dana</h2>
+      <form id="form-pindah" novalidate>
+        <label>Tanggal
+          <input type="date" name="tanggal">
+        </label>
+
+        <label>Dari dompet
+          <select name="dari">
+            <option value="Pribadi">Pribadi</option>
+            <option value="Usaha">Usaha</option>
+          </select>
+        </label>
+
+        <label>Ke dompet
+          <select name="ke">
+            <option value="Pribadi">Pribadi</option>
+            <option value="Usaha" selected>Usaha</option>
+          </select>
+        </label>
+
+        <label>Nominal (Rp)
+          <input type="number" name="nominal" placeholder="Contoh: 100000">
+        </label>
+
+        <label>Catatan (opsional)
+          <input type="text" name="catatan" placeholder="Contoh: Modal">
+        </label>
+
+        <p id="pesan-pindah" class="error"></p>
+        <button type="submit">Pindahkan</button>
       </form>
     </section>
 

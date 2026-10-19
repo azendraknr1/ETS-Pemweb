@@ -14,8 +14,10 @@ Pedagang berjualan sehari-hari dan uang hasil jualannya sering bercampur dengan 
 - W3: hapus transaksi dengan konfirmasi
 - W4: data tersimpan di localStorage
 
-## Fitur yang belum selesai
+## Fitur yang sudah selesai (Checkpoint 2)
 - W5: ringkasan (total pemasukan, pengeluaran, saldo)
 - W6: validasi form
+
+## Fitur yang belum selesai
 - Fitur khas: saldo terpisah untuk dompet Pribadi dan Usaha, serta pindah dana antar dompet
 - Bonus: belum dikerjakan

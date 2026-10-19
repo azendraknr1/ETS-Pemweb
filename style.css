@@ -62,4 +62,27 @@ li {
 
 .pemasukan { color: green; }
 .pengeluaran { color: red; }
-.error { color: red; }
+.error { color: red; min-height: 1.2em; margin: 0; }
+
+/* BARU: kartu ringkasan */
+.ringkasan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(9rem, 100%), 1fr));
+  gap: 12px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.kartu {
+  background: white;
+  border: 1px solid #d9e1e7;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kartu span { font-size: 0.85rem; color: #5b6b78; }
+.kartu strong { font-size: 1.1rem; overflow-wrap: anywhere; }
