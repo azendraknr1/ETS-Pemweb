@@ -59,3 +59,26 @@ Karena field dompet sudah ada sejak Checkpoint 1, struktur lama tidak perlu diub
 ## Keputusan desain
 Pindah dana saya simpan sebagai transaksi dengan jenis "pindah" di array yang sama, bukan dicatat sebagai pengeluaran di satu dompet dan pemasukan di dompet lain. Alasannya, uang yang dipindah hanya berpindah tempat, bukan bertambah atau berkurang. Kalau dicatat sebagai pemasukan dan pengeluaran, total pemasukan dan pengeluaran jadi membengkak dan keuntungan usaha kembali tidak jelas, padahal itu masalah utama persona saya. Karena itu hitungRingkasan() hanya menjumlah pemasukan dan pengeluaran, sedangkan hitungSaldoDompet() mengurangi dompet asal dan menambah dompet tujuan. Cek kebenarannya: saldo Pribadi ditambah saldo Usaha harus selalu sama dengan total saldo.
 
+# Checkpoint 3
+## Persona dan masalahnya
+Pedagang kecil perlu menyimpan catatan keuangannya di luar browser, misalnya sebagai cadangan atau untuk dilihat ulang, Oleh karena itu di checkpoint ini ditambahkan dua bonus, yaitu ekspor data ke file JSON dan tampilan yang tetap rapi di layar sempit (360px).
+
+## Rancangan struktur data
+Struktur data tidak berubah. Array data tetap berisi transaksi dengan jenis "pemasukan", "pengeluaran", dan "pindah". Ekspor memakai array yang sama, jadi isi file pisahuang.json persis sama dengan yang tersimpan di localStorage.
+
+Contoh isi file hasil ekspor:
+
+    [
+      {
+        "id": 1739251200000,
+        "tanggal": "2026-10-19",
+        "jenis": "pemasukan",
+        "dompet": "Usaha",
+        "kategori": "Penjualan",
+        "nominal": 100000,
+        "catatan": ""
+      }
+    ]
+
+## Keputusan desain
+Ekspor saya buat langsung dari array data memakai JSON.stringify(), lalu dibungkus Blob dan diunduh lewat tautan sementara dengan atribut download. Alasannya, cara ini tidak memerlukan server dan tidak mengubah data atau fungsi yang sudah berjalan, jadi risiko merusak fitur lama kecil. Untuk tampilan responsif, saya hanya menambah aturan CSS: lebar input dibatasi 100%, teks panjang boleh turun baris, dan @media (max-width: 400px) untuk mengurangi padding. Kartu ringkasan sudah memakai grid auto-fit sejak Checkpoint 2, jadi tidak perlu diubah.

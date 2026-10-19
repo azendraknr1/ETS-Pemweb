@@ -18,6 +18,7 @@ const formPindah = document.querySelector("#form-pindah");
 const pesan = document.querySelector("#pesan");
 const pesanPindah = document.querySelector("#pesan-pindah");
 const daftar = document.querySelector("#daftar");
+const tombolEkspor = document.querySelector("#ekspor");
 
 function rupiah(angka) {
   return "Rp " + angka.toLocaleString("id-ID");
@@ -100,6 +101,15 @@ function render() {
   renderRingkasan();
 }
 
+function eksporData() {
+  const teks = JSON.stringify(data, null, 2);
+  const blob = new Blob([teks], { type: "application/json" });
+  const tautan = document.createElement("a");
+  tautan.href = URL.createObjectURL(blob);
+  tautan.download = "pisahuang.json";
+  tautan.click();
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const f = form.elements;
@@ -165,6 +175,8 @@ formPindah.addEventListener("submit", (event) => {
   formPindah.reset();
   f.tanggal.value = hariIni();
 });
+
+tombolEkspor.addEventListener("click", eksporData);
 
 daftar.addEventListener("click", (event) => {
   const tombol = event.target.closest("button");

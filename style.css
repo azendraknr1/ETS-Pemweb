@@ -64,7 +64,6 @@ li {
 .pengeluaran { color: red; }
 .error { color: red; min-height: 1.2em; margin: 0; }
 
-/* BARU: kartu ringkasan */
 .ringkasan {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(9rem, 100%), 1fr));
@@ -86,3 +85,28 @@ li {
 
 .kartu span { font-size: 0.85rem; color: #5b6b78; }
 .kartu strong { font-size: 1.1rem; overflow-wrap: anywhere; }
+
+#ekspor {
+  margin-top: 12px;
+  background: white;
+  color: #1d6f8a;
+  border: 1px solid #1d6f8a;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input, select {
+  width: 100%;
+  min-width: 0;
+}
+
+li span {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 400px) {
+  main { padding: 12px; }
+  section { padding: 12px; }
+  .kartu { padding: 10px; }
+  li { flex-wrap: wrap; }
+}

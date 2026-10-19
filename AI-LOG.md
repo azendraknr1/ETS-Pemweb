@@ -12,6 +12,6 @@
 - Diubah: -
 
 ## Checkpoint 3
-- Prompt: 
-- Dipakai: 
-- Diubah: 
+- Prompt: tolong lanjutkan untuk mengerjakan checkpoint 3 yakni menambahkan fitur Responsif 360px & Ekspor JSON
+- Dipakai: index.html, style.css, dan script.js lengkap dari prompt 2. Dari index.html dipakai tombol Ekspor JSON (#ekspor) di bagian Riwayat. Dari style.css dipakai tampilan tombol ekspor, aturan input dan select selebar 100% (min-width: 0), overflow-wrap pada teks riwayat, dan @media (max-width: 400px) untuk responsif 360px. Dari script.js dipakai variabel tombolEkspor, fungsi eksporData() (JSON.stringify, Blob, tautan download), dan listener klik tombol ekspor.
+- Diubah: - 
